@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum Log — GTA 6 Trophy Guide &amp; Tracker (55 PS5 Trophies)</title>
+<meta name="description" content="Offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: checklist, roadmap to platinum, missable flags, and a guide to each trophy with named sources.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Leonida Platinum Log</h1>
+    <p class="sub">GTA 6 trophy guide &amp; tracker — all 55 PS5 trophies · works offline · no account, no network</p>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="bar" role="progressbar" aria-label="Trophies earned"><div id="progressFill" class="fill"></div></div>
+    <div class="grade-counts" id="gradeCounts"></div>
+  </div>
+</header>
+
+<section class="audit" id="auditStrip" aria-label="Verification notes"></section>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="tracker" class="tab active">Tracker</button>
+  <button type="button" data-view="roadmap" class="tab">Roadmap to Platinum</button>
+  <button type="button" data-view="missables" class="tab">Missables</button>
+  <button type="button" data-view="sources" class="tab">Sources &amp; Method</button>
+</nav>
+
+<main>
+  <section id="view-tracker" class="view active">
+    <div class="controls">
+      <label>Search <input id="search" type="search" placeholder="Trophy name or description…" autocomplete="off"></label>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="side">Side / Strangers</option>
+          <option value="activity">Activities</option>
+          <option value="collectible">Collectibles</option>
+          <option value="combat">Combat</option>
+          <option value="exploration">Exploration</option>
+          <option value="money">Money</option>
+          <option value="misc">Misc / Secret</option>
+          <option value="completion">100% Completion</option>
+          <option value="platinum">Platinum</option>
+        </select>
+      </label>
+      <label>Status
+        <select id="statusFilter">
+          <option value="all">All</option>
+          <option value="remaining">Not earned yet</option>
+          <option value="earned">Earned</option>
+          <option value="missable">Possible missables</option>
+        </select>
+      </label>
+      <label class="check"><input id="spoilerToggle" type="checkbox" checked> Spoiler shield (hide story &amp; secret trophies until earned)</label>
+    </div>
+    <div class="actions">
+      <button id="exportBtn" type="button">Export progress (.json)</button>
+      <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="copyLinkBtn" type="button">Copy share link</button>
+      <button id="resetBtn" type="button" class="danger">Reset progress</button>
+      <span id="actionMsg" class="msg" role="status"></span>
+    </div>
+    <p id="resultCount" class="count"></p>
+    <div id="trophyGrid" class="grid"></div>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <p class="intro">Six phases from the opening mission to the platinum. Every phase lists the trophies it earns — 55 in total, in one playthrough, all offline (KeenGamer). Time estimate: roughly 200 hours (KeenGamer) to 300+ hours (Push Square).</p>
+    <div id="roadmapList"></div>
+  </section>
+
+  <section id="view-missables" class="view">
+    <p class="intro" id="missableIntro"></p>
+    <div id="missableList" class="grid"></div>
+    <h2>How to protect a run</h2>
+    <ol class="tips">
+      <li><strong>Rotate manual saves.</strong> GTA 6 has 15 manual save slots and 1 autosave, and no mission replay (games.gg). Keep 3–4 rotating saves from different story points.</li>
+      <li><strong>Save before anything flagged above.</strong> The flagged trophies are the ones where a single attempt may be all you get.</li>
+      <li><strong>Do meditation spots as you find them.</strong> Positive Mental Attitude is the only trophy any guide names as possibly missable so far (Mobalytics).</li>
+      <li><strong>Do partner trophies while your partner is around.</strong> Hot Together and Retail Therapy need your partner present.</li>
+      <li><strong>Never use cheats.</strong> Cheats disable trophies (Mobalytics).</li>
+    </ol>
+  </section>
+
+  <section id="view-sources" class="view">
+    <h2>Sources &amp; method</h2>
+    <p class="intro">Every trophy name, description and grade in this guide is the official PSN listing, cross-checked against the public trophy tables below. Guides are written in our own words and cite their sources; no text is copied from any guide, and no Rockstar logo or artwork is used.</p>
+    <div id="sourceList"></div>
+    <h2>What was checked</h2>
+    <ul class="checks" id="checkList"></ul>
+    <p class="fineprint">Grand Theft Auto VI, GTA 6, Leonida and Vice City are properties of Rockstar Games / Take-Two Interactive. This is an unofficial fan-made guide, not affiliated with or endorsed by Rockstar. Trophy names and descriptions are quoted from the official PlayStation trophy list for identification.</p>
+  </section>
+</main>
+
+<div id="detail" class="detail hidden" role="dialog" aria-modal="true" aria-labelledby="detailName">
+  <div class="detail-card">
+    <button id="detailClose" type="button" class="close" aria-label="Close">✕</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<footer>
+  <p>Leonida Platinum Log — unofficial GTA 6 trophy guide &amp; tracker. Data: the official 55 PS5 trophies (18 Nov 2026). Your progress never leaves this browser except when you export it.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
